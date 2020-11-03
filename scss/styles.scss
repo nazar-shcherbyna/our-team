@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;500&family=Roboto:wght@900&display=swap');
+@import 'normalize';
+@import 'variables';
+@import 'slider';
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+a, button {
+    transition: all .3s ease-in-out 
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font: 500 1.4rem/1.7 $text-ff;
+    color: $text-color;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 100px 0;
+    &__head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__suptitle {
+        color: $secondary-color;
+        font-size: 1.8rem;
+    }
+    &__title {
+        color: $primary-color;
+        font-size: 6rem;
+        font-family: $title-ff;
+        margin: 0;
+        line-height: 1.2;
+    }
+    &__icon {
+        position: relative;
+        padding: 30px 0;
+        svg {
+            fill: $primary-color;
+        }
+        &:before,
+        &:after {
+            content: '';
+            max-width: 18%;
+            width: 210px;
+            border-top: 1px solid $primary-color;
+            display: block;
+            height: $border-width;
+            position: absolute;
+            top: calc(50% - #{$border-width} / 2);
+        }
+        &::before {
+            right: calc(50% + 24px);
+        }
+        &::after {
+            left: calc(50% + 24px);
+        }
+    }
+}

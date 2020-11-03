@@ -1,0 +1,56 @@
+.slider {
+    position: relative;
+    outline: 1px solid green;
+    &__slide {
+        outline: 1px solid blue;
+        height: 400px;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        padding: 20px;
+        font-size: 4rem;
+        color: $primary-color;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        &--prev {
+            left: 0;
+        }
+        &--next {
+            right: 0;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            transform: scale(1.5)   ;
+        }
+    }
+
+    &__dots {
+        list-style: none;
+        padding: 0 70px;
+        text-align: center;
+        li {
+            display: inline-block;
+        }
+    }
+    &__dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        padding: 0;
+        outline: 0;
+        border:  $border-width solid #fff;
+        background-color: $primary-color;
+        &--active,
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: $primary-color;
+            background-color: #fff;
+        }
+    }
+}
