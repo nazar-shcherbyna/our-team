@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Raleway:wght@400;500&family=Roboto:wght@900&display=swap');
 @import 'normalize';
 @import 'variables';
+@import 'mixins';
 @import 'slider';
-
-
+@import 'socials';
 
 * {
     box-sizing: border-box;
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    font: 500 1.4rem/1.7 $text-ff;
     color: $text-color;
+    font: 500 1.4rem/1.7 $text-ff;
 }
 
 .container {
@@ -41,12 +41,11 @@ body {
         color: $primary-color;
         font-size: 6rem;
         font-family: $title-ff;
-        margin: 0;
+        margin: 0 0 30px 0;
         line-height: 1.2;
     }
     &__icon {
         position: relative;
-        padding: 30px 0;
         svg {
             fill: $primary-color;
         }
@@ -67,5 +66,61 @@ body {
         &::after {
             left: calc(50% + 24px);
         }
+    }
+}
+
+.profile {
+    display: flex;
+    &__part {
+        width: 50%;
+        padding: 85px;
+        & + & {
+            border-left: $border;
+        }
+        text-align: center;
+    }
+    &__imgwrap {
+        position: relative;
+        border: $border;
+        font-size: 0;
+        padding: 15px;
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: calc(100% + #{$border-width} * 4);
+            height: 60%;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::after {
+            width: 60%;
+            height: calc(100% + #{$border-width} * 4);
+        }
+    }
+    &__img {
+        border: $border;    
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    &__name {
+        font: 900 3.6rem/1.2 $title-ff;
+        color: $secondary-color;
+        margin: 0;
+        &::after {
+            content: '';
+            width: 100px;
+            border-top: $border;
+            display: block;
+            margin: 25px auto;
+        }
+    }
+    &__position {
+        font-size: 2.4rem;
+        color: $secondary-color;
     }
 }

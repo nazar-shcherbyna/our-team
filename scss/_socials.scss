@@ -1,0 +1,25 @@
+.socials {
+    list-style: none;
+    padding: 0;
+    color: $icon-color;
+    margin: 25px 0;
+}
+
+.social {
+    display: inline-block;
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        line-height: 32px - $border-width;
+        border-radius: 50%;
+        border: $border-width solid $icon-color;
+        @include hover {
+            background-color: $icon-color;
+            color: #fff;
+        }
+    }
+}
+

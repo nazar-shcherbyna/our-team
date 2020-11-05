@@ -1,9 +1,7 @@
 .slider {
     position: relative;
-    outline: 1px solid green;
     &__slide {
-        outline: 1px solid blue;
-        height: 400px;
+        padding: 40px 0;
     }
 
     &__arrow {
@@ -33,6 +31,7 @@
         list-style: none;
         padding: 0 70px;
         text-align: center;
+        margin: 0;
         li {
             display: inline-block;
         }
@@ -45,10 +44,11 @@
         outline: 0;
         border:  $border-width solid #fff;
         background-color: $primary-color;
-        &--active,
-        &:hover,
-        &:focus,
-        &:active {
+        &--active {
+            border-color: $primary-color;
+            background-color: #fff;
+        }
+        @include hover {
             border-color: $primary-color;
             background-color: #fff;
         }
