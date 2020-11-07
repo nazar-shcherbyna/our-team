@@ -123,4 +123,19 @@ body {
         font-size: 2.4rem;
         color: $secondary-color;
     }
+    &__text {
+        &::after {
+            $c1: $primary-color;
+            $c2: transparent;
+
+            content: '';
+            display: block;
+            margin: 20px auto;
+            width: 52px;
+            height: 4px;
+            background-image: linear-gradient(to right, $c1 20%, $c2 20%, $c2 30%,
+            $c1 30%, $c1 70%, $c2 70%, $c2 80%, $c1 80%);
+            // background: $primary-color;
+        }
+    }
 }
