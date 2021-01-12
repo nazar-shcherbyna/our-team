@@ -8,6 +8,7 @@
         position: absolute;
         top: 0;
         bottom: 0;
+        z-index: 1;
         padding: 20px;
         font-size: 4rem;
         color: $primary-color;
@@ -20,9 +21,7 @@
         &--next {
             right: 0;
         }
-        &:hover,
-        &:focus,
-        &:active {
+        &:hover {
             transform: scale(1.5)   ;
         }
     }
@@ -34,6 +33,24 @@
         margin: 0;
         li {
             display: inline-block;
+            button {
+                font-size: 0;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                padding: 0;
+                outline: 0;
+                border:  $border-width solid #fff;
+                background-color: $primary-color;
+                @include hover {
+                    border-color: $primary-color;
+                    background-color: #fff;
+                }
+            }
+            &.slick-active button {
+                border-color: $primary-color;
+                background-color: #fff;
+            }
         }
     }
     &__dot {
